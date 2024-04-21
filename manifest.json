@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Ollama Google Integration",
+    "version": "1.0",
+    "description": "Asks Ollama your Google search querries and displays its reponse on the page.",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_security_policy": {
+        "extension_pages": "default-src 'self'; script-src 'self'; object-src 'self'; connect-src 'self'"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.google.com/*"
+            ],
+            "js": [
+                "querry.js"
+            ]
+        }
+    ]
+}
